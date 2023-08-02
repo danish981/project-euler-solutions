@@ -10,24 +10,19 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
  */
 
-// incomplete now
-
-$limit = 4000000;
-
-$a = 1;
-$b = 1;
-$c = $a + $b;
+$first = 0;
+$second = 1;
+$term = 0;
 $sum = 0;
 
-while ($c < $limit) {
-    $a = $b + $c;
-    $b = $a + $c;
-    $c = $a + $b;
+while ($term < 4000000) {
 
-    if ($c % 2 == 0) {
-        $sum += $sum;
-    }
+    $term = $first + $second;
+    $first = $second;
+    $second = $term;
+
+    if ($term % 2 == 0)
+        $sum = $sum + $term;
 }
 
 echo $sum;
-
