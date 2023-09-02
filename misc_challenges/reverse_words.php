@@ -6,3 +6,4 @@ function reverseWords(string $string) {
     return implode(' ', array_reverse(explode(' ', $string)));
 }
 
+echo reverseWords($string);
